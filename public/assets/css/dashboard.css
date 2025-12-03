@@ -1,0 +1,115 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+body { background-color: #f9fafb; padding-top: 80px; }
+
+header.top-bar {
+    background-color: white;
+    height: 70px;
+    padding: 0 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+}
+
+.header-left { display: flex; align-items: center; gap: 20px; }
+
+.menu-toggle {
+    font-size: 20px; color: #333; cursor: pointer;
+    padding: 8px; border-radius: 50%; transition: 0.2s;
+}
+.menu-toggle:hover { background-color: #f3f4f6; }
+
+.logo { display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 20px; color: #333; text-decoration: none; }
+.logo-icon { background: #2563eb; color: white; width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 18px; }
+
+.nav-menu { display: flex; gap: 20px; }
+.nav-item {
+    text-decoration: none; color: #666; font-weight: 500; font-size: 14px;
+    display: flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 6px; transition: 0.2s;
+}
+.nav-item:hover { background-color: #f3f4f6; }
+.nav-item.active { background-color: #2563eb; color: white; }
+
+.header-right { display: flex; align-items: center; gap: 20px; }
+
+.icon-btn { 
+    position: relative; width: 40px; height: 40px; border: 1px solid #e5e7eb; 
+    border-radius: 8px; display: flex; justify-content: center; align-items: center;
+    color: #333; text-decoration: none; transition: 0.2s;
+}
+.icon-btn:hover { background-color: #f9fafb; border-color: #d1d5db; }
+
+.badge-count { 
+    position: absolute; top: -5px; right: -5px; 
+    background: #dc2626; color: white; 
+    font-size: 10px; width: 18px; height: 18px; 
+    border-radius: 50%; display: flex; justify-content: center; align-items: center; 
+    font-weight: bold; 
+}
+
+.user-mini-profile {
+    display: flex; align-items: center; gap: 10px;
+    padding: 5px 12px; background-color: #f9fafb; border-radius: 30px; border: 1px solid #f3f4f6;
+}
+.mini-avatar { width: 30px; height: 30px; background: #bfdbfe; color: #2563eb; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 14px; }
+.mini-info h4 { font-size: 12px; color: #333; }
+.mini-info span { font-size: 10px; color: #666; display: block; }
+.logout-mini { color: #dc2626; font-size: 14px; margin-left: 5px; cursor: pointer; }
+
+.sidebar {
+    position: fixed; top: 0; left: -320px; width: 300px; height: 100vh;
+    background-color: white; box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    z-index: 2000; padding: 25px; display: flex; flex-direction: column;
+    transition: left 0.3s ease-in-out;
+}
+.sidebar.open { left: 0; }
+.sidebar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.close-btn { font-size: 20px; cursor: pointer; color: #666; }
+
+.user-card { background-color: #eff6ff; border: 1px solid #dbeafe; border-radius: 12px; padding: 20px; margin-bottom: 30px; }
+.user-card-header { display: flex; gap: 12px; align-items: center; margin-bottom: 15px; }
+.user-card-avatar { font-size: 24px; color: #2563eb; }
+.user-card-info h4 { font-size: 14px; color: #1f2937; font-weight: 600; }
+.user-card-info span { font-size: 12px; color: #6b7280; }
+.divider { height: 1px; background-color: #bfdbfe; margin-bottom: 12px; }
+.user-balance p { font-size: 12px; color: #64748b; }
+.user-balance strong { font-size: 18px; color: #16a34a; font-weight: 700; }
+
+.sidebar-menu { display: flex; flex-direction: column; gap: 10px; flex-grow: 1; }
+.menu-link { display: flex; align-items: flex-start; gap: 12px; padding: 12px 15px; text-decoration: none; border-radius: 10px; color: #4b5563; transition: 0.2s; }
+.menu-link i { margin-top: 3px; font-size: 16px; }
+.link-text { display: flex; flex-direction: column; }
+.link-title { font-size: 14px; font-weight: 600; }
+.link-desc { font-size: 11px; color: #9ca3af; margin-top: 2px; }
+.menu-link:hover { background-color: #f3f4f6; }
+.menu-link.active { background-color: #2563eb; color: white; }
+.menu-link.active .link-desc { color: #bfdbfe; }
+.sidebar-logout { color: #dc2626; text-decoration: none; font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 10px; padding: 10px; margin-top: auto; }
+
+.overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1500; display: none; }
+.overlay.active { display: block; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+.page-header { margin-bottom: 30px; }
+h2 { font-size: 22px; color: #333; }
+p.subtitle { color: #666; font-size: 14px; }
+
+.filters { display: flex; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+.filter-btn { padding: 8px 20px; border-radius: 8px; border: 1px solid #e5e7eb; background: white; color: #333; text-decoration: none; font-size: 14px; font-weight: 500; transition: 0.2s; }
+.filter-btn:hover { background: #f3f4f6; }
+.filter-btn.active { background: #2563eb; color: white; border-color: #2563eb; }
+
+.products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 25px; }
+.card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid #f0f0f0; transition: transform 0.2s; display: flex; flex-direction: column; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+.card-img { width: 100%; height: 160px; object-fit: cover; }
+.card-body { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
+.badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; margin-bottom: 10px; width: fit-content; background: #e0f2fe; color: #0369a1; }
+.badge-lanches { background: #dbeafe; color: #1e40af; }
+.badge-bebidas { background: #ffedd5; color: #9a3412; }
+.badge-sobremesas { background: #fce7f3; color: #9d174d; }
+.card-title { font-size: 16px; font-weight: 600; margin-bottom: 5px; color: #333; }
+.card-desc { font-size: 13px; color: #666; margin-bottom: 15px; flex-grow: 1; }
+.card-footer { display: flex; justify-content: space-between; align-items: center; margin-top: auto; }
+.price { font-size: 16px; font-weight: 700; color: #2563eb; }
+.btn-add { background: #2563eb; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 5px; }
+.btn-add:hover { background: #1d4ed8; }
