@@ -1,4 +1,4 @@
-##Byte Menu
+## Byte Menu
 
 O Byte Menu é um sistema desenvolvido para atender às necessidades da cantina do SESI/SENAI.
 
